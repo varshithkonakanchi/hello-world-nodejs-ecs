@@ -26,7 +26,7 @@ resource "aws_ecs_service" "main" {
   desired_count   = 1
 
   network_configuration {
-    subnets         = data.aws_subnet_ids.default.ids
+    subnets         = ["subnet-0bd61539156ae691c"]
     security_groups = [aws_security_group.default.id]
   }
 }
