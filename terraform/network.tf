@@ -1,15 +1,7 @@
-data "aws_vpc" "default" {
-  default = true
-}
-
-data "aws_subnet_ids" "default" {
-  vpc_id = data.aws_vpc.default.id
-}
-
 resource "aws_security_group" "default" {
   name        = "allow_http"
   description = "Allow HTTP traffic"
-  vpc_id      = data.aws_vpc.default.id
+  vpc_id      = "vpc-0c2d38d7a412c2a3f"
 
   ingress {
     from_port   = 80
